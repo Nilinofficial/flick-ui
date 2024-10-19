@@ -25,7 +25,7 @@ const fetchData = async (token) => {
 export async function middleware(request) {
   const token = request.cookies.get("token")?.value;
 
-  const protectedPaths = ["/","/feeds", "/profile"];
+  const protectedPaths = ["/", "/feeds", "/profile"];
 
   const isProtectedPath = protectedPaths.includes(request.nextUrl.pathname);
 
@@ -36,12 +36,9 @@ export async function middleware(request) {
   if (token) {
     const isAuthenticated = await fetchData(token);
 
-    if (
-        isAuthenticated &&
-        ["/"].includes(request.nextUrl.pathname)
-      ) {
-        return NextResponse.redirect(new URL("/feeds", request.url));
-      }
+    if (isAuthenticated && ["/"].includes(request.nextUrl.pathname)) {
+      return NextResponse.redirect(new URL("/feeds", request.url));
+    }
 
     if (
       isAuthenticated &&

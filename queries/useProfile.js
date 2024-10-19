@@ -11,8 +11,6 @@ const getProfile = async (dispatch) => {
     }
   );
   await dispatch(addUser(res?.data));
-  console.log(res);
-  
   return res;
 };
 

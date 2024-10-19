@@ -5,10 +5,9 @@ import Navbar from "../../components/navbar/Navbar";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-export default function DashboardLayout({ children }) {
+export default function MainLayout({ children }) {
   const { refetch } = useProfile();
   const user = useSelector((state) => state.user.user);
-  console.log(user);
 
   const fetchProfile = async () => {
     await refetch();
@@ -22,7 +21,7 @@ export default function DashboardLayout({ children }) {
 
   return (
     <section className="">
-      <Navbar name={user?.firstName} photoUrl = {user?.profilePhotoUrl}/>
+      <Navbar name={user?.firstName} photoUrl={user?.profilePhotoUrl} />
       {children}
     </section>
   );

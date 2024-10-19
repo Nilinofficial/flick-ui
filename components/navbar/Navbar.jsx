@@ -37,8 +37,8 @@ const Navbar = ({ name, photoUrl }) => {
             <li>
               <a>Settings</a>
             </li>
-            <li onClick={() => logout()}>
-              <p>Logout</p>
+            <li>
+              <p onClick={() => logout()}>Logout</p>
             </li>
           </ul>
         </div>
