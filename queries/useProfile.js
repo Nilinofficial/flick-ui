@@ -10,7 +10,8 @@ const getProfile = async (dispatch) => {
       withCredentials: true,
     }
   );
-  await dispatch(addUser(res?.data));
+  dispatch(addUser(res?.data));
+   
   return res;
 };
 

@@ -17,7 +17,11 @@ export default function MainLayout({ children }) {
     if (!user) {
       fetchProfile();
     }
-  }, []);
+  }, [user]);
+
+  if (!user) {
+    return <p>Loading user data...</p>;
+  }
 
   return (
     <section className="">

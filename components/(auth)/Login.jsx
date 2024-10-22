@@ -5,8 +5,8 @@ import { useLogin } from "../../queries/useLogin";
 
 const Login = () => {
   const [userCredentials, setUserCredentials] = useState({
-    email: "itsmenilin@gmail.com",
-    password: "@Nilin921",
+    email: "",
+    password: "",
   });
 
   const { mutate: login, error,isLoading } = useLogin();
